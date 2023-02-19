@@ -106,7 +106,7 @@ jobs:
           command: |
             cd backend
             npm install --legacy-peer-deps --force
-            npm audit fix
+            npm audit fix --legacy-peer-deps
           #  npm audit fix --audit-level=critical --force
 
   scan-backend:
@@ -124,7 +124,7 @@ jobs:
             cd backend
             # npm install
             npm install --legacy-peer-deps --force
-            npm audit fix --force
+            npm audit fix --legacy-peer-deps --force
             # npm audit fix --audit-level=critical --force
             
   deploy-infrastructure:
