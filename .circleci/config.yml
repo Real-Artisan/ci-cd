@@ -35,7 +35,8 @@ jobs:
           name: Build front-end
           command: |
             cd frontend
-            npm install
+            # npm install
+            npm install --legacy-peer-deps
             npm run build
       - save_cache:
           key: fe-deps-{{ checksum "package-lock.json" }}
@@ -51,7 +52,8 @@ jobs:
           name: Back-end build
           command: |
              cd backend
-             npm install
+             # npm install
+             npm install --legacy-peer-deps
              npm run build
       - save_cache:
           key: be-deps-{{ checksum "package-lock.json" }}
@@ -70,7 +72,8 @@ jobs:
           name: backend-test
           command: |
             cd backend
-            npm install
+            # npm install
+            npm install --legacy-peer-deps
             npm test
                 
   test-backend:
@@ -86,7 +89,8 @@ jobs:
           name: backend-test
           command: |
             cd backend
-            npm install
+            # npm install
+            npm install --legacy-peer-deps
             npm test
   scan-frontend:
     docker:
@@ -117,7 +121,8 @@ jobs:
           name: backend-scan
           command: |
             cd backend
-            npm install
+            # npm install
+            npm install --legacy-peer-deps
             npm audit fix --force
             # npm audit fix --audit-level=critical --force
             
