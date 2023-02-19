@@ -53,7 +53,7 @@ jobs:
           command: |
              cd backend
              # npm install
-             npm install --legacy-peer-deps
+             npm install --legacy-peer-deps 
              npm run build
       - save_cache:
           key: be-deps-{{ checksum "package-lock.json" }}
@@ -123,7 +123,7 @@ jobs:
           command: |
             cd backend
             # npm install
-            npm install --legacy-peer-deps
+            npm install --legacy-peer-deps --force
             npm audit fix --force
             # npm audit fix --audit-level=critical --force
             
